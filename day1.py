@@ -13,6 +13,8 @@ def top_N_total_calories(filepath, N):
     output:
     - Int: The sum of the calories of the N elves that carry the most calories
     """
+    assert N > 0
+
     food_totals = []
     calories = 0
     with open(filepath) as f:
@@ -25,7 +27,8 @@ def top_N_total_calories(filepath, N):
             else:
                 food_totals.append(calories)
                 calories = 0
-    food_totals.append(calories)
+    if calories > 0:
+        food_totals.append(calories)
 
     return sum(sorted(food_totals)[-N:])
 
