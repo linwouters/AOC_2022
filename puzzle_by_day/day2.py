@@ -76,7 +76,7 @@ def get_scores(filepath):
 
 
 if __name__ == "__main__":
-    filepath="data/day1.txt"
+    filepath="../data/day2.txt"
     score_1, score_2 = get_scores(filepath)
     print(f"The total score if everything goes right with the second column being your own shape would be: {score_1}")
     print(f"The total score if everything goes right with the second column being the result would be: {score_2}")
