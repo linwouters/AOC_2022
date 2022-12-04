@@ -33,7 +33,7 @@ def get_batch_priorities(filepath):
         # Iterate over the lines in groups of 3
         for start_idx in range(0, len(file)-1, 3):
             # Get the intersection of each of the three lines in that group
-            batch_item = list(set(file[start_idx]).intersection(set(file[start_idx+1])).intersection(set(file[start_idx+2])))[0]
+            batch_item = list(set.intersection(set(file[start_idx]), set(file[start_idx+1]), set(file[start_idx+2])))[0]
             # Add the priority of this item type to the sum
             priorities += ord(batch_item) - 96 if batch_item.islower() else ord(batch_item) - 38
 
